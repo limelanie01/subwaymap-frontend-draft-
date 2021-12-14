@@ -1,0 +1,18 @@
+import folium
+import requests
+
+data = requests.get('https://subway-map.herokuapp.com/').json()
+
+while True:         #loop runs infinitely
+    station = input('Enter Station Name: ')
+    for eachstation in stationname:                 #going through each station's name
+        if station.lower() in eachstation.lower():
+            m = folium.Map(location=[entrancelat, entrancelong], zoom_start=3)  #shows locations of the specified stations
+           #popup menu for each locations: subwayline, routes, entrancetype, entry, ada, freecrossover
+
+    else:
+        print('The following train station', station, 'does not exist. Please enter the name of another train station.')
+
+    print()
+
+    m.save(outfile='tempMap.html')
